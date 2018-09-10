@@ -16,8 +16,8 @@ app = Flask(__name__)
 
 
 
-@app.route('/index',methods=['GET','POST'])
-def index():
+@app.route('/index_lulu',methods=['GET','POST'])
+def index_lulu():
     app.i=0
     if request.method == 'GET':
         return render_template('userinfo_young.html')
@@ -36,10 +36,10 @@ def index():
         app.vars['name'] = request.form['name_lulu']
         app.vars['age'] = request.form['age_lulu']
         '''
-        return redirect('/main')
+        return redirect('/main_lulu')
 
-@app.route('/main')
-def main2():
+@app.route('/main_lulu')
+def main_lulu2():
     
    
     p=bokeh.plotting.figure(title='Quandl WIKI EOD Stock Prices - 2017')
@@ -78,19 +78,19 @@ def main2():
     output_file(app.filename,title=app.tickername+" stock prices-2017")
     save(p)
     
-    return redirect('/next')
+    return redirect('/next_lulu')
 
 #####################################
 ## IMPORTANT: I have separated /next_lulu INTO GET AND POST
 ## You can also do this in one function, with If and Else.
 
-@app.route('/next',methods=['GET'])
-def next():
+@app.route('/next_lulu',methods=['GET'])
+def next_lulu():  
 
     return render_template('myplot'+str(app.i)+'.html')
 
-@app.route('/next',methods=['POST'])
-def next2():
+@app.route('/next_lulu',methods=['POST'])
+def next_lulu2():  
 
     return render_template('myplot.html')
 
