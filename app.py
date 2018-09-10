@@ -1,5 +1,5 @@
+import flask
 from flask import Flask,render_template,request,redirect
-import numpy as np
 import bokeh
 import quandl
 from bokeh import plotting
@@ -96,4 +96,4 @@ def next_lulu2():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(port=port)
+    app.run(host='0.0.0.0',port=port)
