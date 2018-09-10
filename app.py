@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 
 
-@app.route('/index',methods=['GET','POST'])
+@app.route('/index_lulu',methods=['GET','POST'])
 def index_lulu():
     app.i=0
     if request.method == 'GET':
